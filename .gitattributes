@@ -1,0 +1,6 @@
+*.cue linguist-language=CUE
+
+*.css linguist-vendored
+*.js linguist-vendored
+
+* -text
