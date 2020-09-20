@@ -1,0 +1,12 @@
+syntax = "proto3";
+
+package user;
+
+option go_package = "github.com/ryoya-fujimoto/proto/device;device";
+
+import "proto/user/resource.proto";
+
+message Device {
+	uint64 id = 1;
+	user.User user = 2;
+}

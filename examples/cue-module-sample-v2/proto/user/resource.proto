@@ -1,0 +1,10 @@
+syntax = "proto3";
+
+package user;
+
+option go_package = "github.com/ryoya-fujimoto/proto/user;user";
+
+message User {
+	string email = 1;
+	string name = 2;
+}
