@@ -1,5 +1,8 @@
 *.cue linguist-language=CUE
 
+Makefile linguist-language=Go
+*.slide linguist-language=Go
+
 *.css linguist-vendored
 *.js linguist-vendored
 
