@@ -27,9 +27,9 @@ CUE是一种开源数据约束语言，它是JSON的超集，是一种功能强�
 
 ## 幻灯片
 
-- [CUE语言简介](talks/chai2010-cue-intro-talk)
+- [CUE语言简介](https://talks.godoc.org/github.com/chai2010/awesome-cue-zh/talks/chai2010-cue-intro-talk/cue-intro.slide) - [chai2010](talks/chai2010-cue-intro-talk)
 - [Deliver Your Cloud Native Application with Design Pattern as Code(PDF)](./talks/Deliver-Your-Cloud-Native-Application-with-Design-Pattern-as-Code.pdf)
-- [設定記述言語 CUE で YAML Hell に立ち向かえ](./talks/k8sjp_29_002.pdf) [原链接](https://speakerdeck.com/ytaka23/kubernetes-meetup-tokyo-29th)
+- [設定記述言語 CUE で YAML Hell に立ち向かえ](./talks/k8sjp_29_002.pdf) ([原链接](https://speakerdeck.com/ytaka23/kubernetes-meetup-tokyo-29th))
 
 ## 精选文章
 
