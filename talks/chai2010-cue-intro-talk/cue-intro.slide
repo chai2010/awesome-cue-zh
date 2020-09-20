@@ -5,7 +5,7 @@ Tags: cue, k8s
 
 chai2010
 chaishushan@gmail.com
-https://github.com/chai2010
+https://github.com/chai2010/awesome-cue-zh
 
 # -----------------------------------------------------------------------------
 * 认识CUE语言
@@ -41,11 +41,11 @@ https://github.com/chai2010
 
 * CUE作者 - Marcel van Lohuizen(马塞尔·范·罗威岑)
 
-- **Gopher China 2018 讲师 - Go2中的错误处理**
+- *GopherChina2018讲师-Go2中的错误处理*
 - 在Go语言官方博客有3篇Go语言相关的技术博文
-- **Borg (以及它的前身)和搜索引擎**
+- *Borg(以及它的前身)和搜索引擎*
 - 2011年初加入了Go团队
-- **2018年底开始CUE项目**
+- *2018年底开始CUE项目*
 - 瑞士·苏黎世
 
 .image ./images/cue-logo.svg 280 _
@@ -116,7 +116,7 @@ hello.check.cue
 
 
 
-- `cue vet hello.json hello.check.cue`
+- cue vet hello.json hello.check.cue
 - 验证 name 是字符串类型
 - 验证 age 类型和值范围
 
@@ -132,8 +132,8 @@ hello.check.cue
 
 
 
-- `a:b:c` 定义c成员
-- `a.b.c` 访问c成员
+- a:b:c 定义c成员
+- a.b.c 访问c成员
 
 * 常量和表达式
 
@@ -141,9 +141,9 @@ hello.check.cue
 
 
 
-- `let`可以定义临时常量
-- `_xxx`字段不能修改, 也不会输出, 类似 `let` 效果
-- `_xxx`作为字段可以添加集合约束, 比如加类型
+- let可以定义临时常量
+- _xxx字段不能修改, 也不会输出, 类似 let 效果
+- _xxx作为字段可以添加集合约束, 比如加类型
 
 * 引用上下文其他字段
 
@@ -172,7 +172,7 @@ hello.check.cue
 
 
 
-- `3*[0]` 生成一个指定长度的数组
+- 3*[0] 生成一个指定长度的数组
 - 可否生成一个素数表/阶乘表?
 
 * 模板变量
@@ -183,7 +183,7 @@ hello.check.cue
 
 
 
-- `[_x=_]` 定义一个模板变量(要避免和成员变量冲突)(`_`是什么含义?)
+- [_x=_] 定义一个模板变量(要避免和成员变量冲突)(_是什么含义?)
 
 * 模板变量的类型
 
@@ -192,7 +192,7 @@ hello.check.cue
 
 
 
-- `a: b: c:` 冒号是定义新的字段, 因此不是变量, 而是字符串类型常量
+- a: b: c: 冒号是定义新的字段, 因此不是变量, 而是字符串类型常量
 - 字段路径中可以有多个参数
 
 * 模板和for
@@ -209,7 +209,7 @@ hello.check.cue
 
 
 
-- `and([])` 和 `or([])` 的结果有什么区别, 如何参与运算?
+- and([]) 和 or([]) 的结果有什么区别, 如何参与运算?
 
 
 # -----------------------------------------------------------------------------
@@ -224,10 +224,10 @@ hello_tool.cue:
 
 
 
-- `hello_tool.cue` 中的 `hello` 表示命令
-- `command: hello:` 中的 `hello` 表示命令, 和文件名保持一致
-- `cli.Print` 打印的参数是 `text` 内容
-- `cue cmd hello`
+- hello_tool.cue 中的 hello 表示命令
+- command: hello: 中的 hello 表示命令, 和文件名保持一致
+- cli.Print 打印的参数是 text 内容
+- cue cmd hello
 
 * 脚本命令 - 执行Shell命令
 
@@ -235,9 +235,9 @@ hello_tool.cue:
 
 
 
-- `tool/exec.Run` 可以执行Shell命令
-- `@tag(who,type=string)`可以通过命令行传人参数
-- `cue cmd --inject who=cuelang hello`
+- tool/exec.Run 可以执行Shell命令
+- @tag(who,type=string)可以通过命令行传人参数
+- cue cmd --inject who=cuelang hello
 
 * 脚本命令 - 顺序执行多个命令
 
@@ -253,7 +253,7 @@ hello_tool.cue:
 
 
 
-- 可以通过 `$after` 定义依赖顺序
+- 可以通过 $after 定义依赖顺序
 - 通过命令的输出依赖关系解析执行的顺序, 而不是定义的先后顺序
 - 比 Makefile 之类工具的优势, 将命令的结果结合 encoding 双向转化和赋值
 
