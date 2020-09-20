@@ -1,0 +1,97 @@
+project_name: "{% .CLI.cliName %}"
+
+before:
+  hooks:
+    - go mod vendor
+
+builds:
+- binary: "{% .CLI.cliName %}"
+  main: main.go
+
+  ldflags:
+    - -s -w
+    - -X {% .CLI.Package %}/verinfo.Version={{.Version}}
+    - -X {% .CLI.Package %}/verinfo.Commit={{.FullCommit}}
+    - -X {% .CLI.Package %}/verinfo.BuildDate={{.Date}}
+    - -X {% .CLI.Package %}/verinfo.GoVersion=go1.14
+    - -X {% .CLI.Package %}/verinfo.BuildOS={{.Os}}
+    - -X {% .CLI.Package %}/verinfo.BuildArch={{.Arch}}
+    - -X {% .CLI.Package %}/verinfo.BuildArm={{.Arm}}
+
+  env:
+  - CGO_ENABLED=0
+
+  goos:
+    - darwin
+    - linux
+    - windows
+  goarch:
+    - amd64
+    - arm64
+    - arm
+
+  ignore:
+  - goos: linux
+    goarch: arm
+
+
+snapshot:
+  name_template: "{{ .Tag }}-SNAPSHOT-{{.ShortCommit}}"
+
+archives:
+- format: binary
+  replacements:
+    darwin: Darwin
+    linux: Linux
+    windows: Windows
+    amd64: x86_64
+  # Needed hack for binary only uploads
+  # For more information, check #602
+  files:
+   - "thisfiledoesnotexist*"
+
+
+checksum:
+  name_template: '{{ .ProjectName }}_{{ .Version }}_checksums.txt'
+
+changelog:
+  sort: asc
+  filters:
+    exclude:
+    - '^docs:'
+    - '^test:'
+
+
+release:
+  disable: {% .CLI.Releases.Disabled %}
+  draft: {% .CLI.Releases.Draft %}
+  github:
+    owner: {% .CLI.Releases.GitHub.Owner %}
+    name: {%  .CLI.Releases.GitHub.Repo %}
+
+dockers:
+- binaries:
+    - {% .CLI.cliName %}
+  skip_push: {% .CLI.Releases.Disabled %}
+  dockerfile: ../../ci/{% .CLI.cliName %}/docker/Dockerfile.jessie
+  image_templates:
+  - "{% .CLI.Releases.Docker.Repo %}/{{.ProjectName}}:{{.Tag}}"
+  - "{% .CLI.Releases.Docker.Repo %}/{{.ProjectName}}:v{{ .Major }}.{{ .Minor }}"
+  - "{% .CLI.Releases.Docker.Repo %}/{{.ProjectName}}:v{{ .Major }}"
+  - "{% .CLI.Releases.Docker.Repo %}/{{.ProjectName}}:latest"
+
+  - "{% .CLI.Releases.Docker.Repo %}/{{.ProjectName}}:{{.Tag}}-debian"
+  - "{% .CLI.Releases.Docker.Repo %}/{{.ProjectName}}:v{{ .Major }}.{{ .Minor }}-debian"
+  - "{% .CLI.Releases.Docker.Repo %}/{{.ProjectName}}:v{{ .Major }}-debian"
+  - "{% .CLI.Releases.Docker.Repo %}/{{.ProjectName}}:latest-debian"
+
+
+- binaries:
+    - {% .CLI.cliName %}
+  skip_push: {% .CLI.Releases.Disabled %}
+  dockerfile: ../../ci/{% .CLI.cliName %}/docker/Dockerfile.scratch
+  image_templates:
+  - "{% .CLI.Releases.Docker.Repo %}/{{.ProjectName}}:{{.Tag}}-scratch"
+  - "{% .CLI.Releases.Docker.Repo %}/{{.ProjectName}}:v{{ .Major }}.{{ .Minor }}-scratch"
+  - "{% .CLI.Releases.Docker.Repo %}/{{.ProjectName}}:v{{ .Major }}-scratch"
+  - "{% .CLI.Releases.Docker.Repo %}/{{.ProjectName}}:latest-scratch"
