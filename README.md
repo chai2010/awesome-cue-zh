@@ -1,5 +1,5 @@
 
-- *蚂蚁金服招聘云原生方向和编程语言方向岗位(杭州/P7)：云原生方向要求熟悉k8s配套工具，如kubectl、kustomize、kubebuilder，operator；编程语言方向要求对语言对语言解释器（如py/js/lua/wasm等）、工具链、配套SDK有一定兴趣和实践经验。欢迎各位同学咨询或推荐（推荐成功独享全额推荐红包）。联系方式 chaishushan@gmail.com, chai2010@alibaba-inc.com*
+- *[蚂蚁金服招聘云原生方向和编程语言方向岗位(杭州/P7)](https://github.com/chai2010/awesome-cue-zh/issues/1)*
 
 ----
 # CUE资源精选 - 中文版
