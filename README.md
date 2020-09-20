@@ -53,4 +53,4 @@ TODO
 - [yamlやJsonのチェック(Lint)ができるCUEの紹介](https://qiita.com/Urotea/items/28fa6a0822de16da02f6)
 - [GoでCUEのバリデーション機能を利用しつつ、.cue/.json/.yaml形式の設定ファイルを読み込む](https://future-architect.github.io/articles/20191030/)
 - [cueで複数のprotobufファイルからschemaを読み込む](https://qiita.com/r-fujimoto/items/604fbfa03118065c8f2a)
-
+- [cuelangを使ったgrpcのテストツールを作った話](https://qiita.com/r-fujimoto/items/af9afec73999545228fb)
