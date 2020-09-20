@@ -1,13 +1,17 @@
 # CUE语言简介
+
+CUE语言简介
 Tags: cue, k8s
 
 chai2010
+chaishushan@gmail.com
+https://github.com/chai2010
 
-// -----------------------------------------------------------------------------
-## 认识CUE语言
-// -----------------------------------------------------------------------------
+# -----------------------------------------------------------------------------
+* 认识CUE语言
+# -----------------------------------------------------------------------------
 
-## CUE语言是什么?
+* CUE语言是什么?
 
 - CUE 是 JSON++
 - CUE 是 CUE Configure Unify Execute 的缩写
@@ -17,25 +21,25 @@ chai2010
 
 .image ./images/cue-logo.svg 280 _
 
-## CUE官网: https://cuelang.org
+* CUE官网: https://cuelang.org
 
 .image ./images/cuelang-01.png 480 _
 
 .caption [[https://cuelang.org][https://cuelang.org]]
 
 
-## CUE项目Star趋势
+* CUE项目Star趋势
 
 .image ./images/cue-star.png 450 _
 
 .caption [[https://starcharts.herokuapp.com/cuelang/cue.svg][https://starcharts.herokuapp.com/cuelang/cue.svg]]
 
 
-## CUE作者 - Marcel van Lohuizen(马塞尔·范·罗威岑)
+* CUE作者 - Marcel van Lohuizen(马塞尔·范·罗威岑)
 
 .image ./images/mpvl-01.png 550 _
 
-## CUE作者 - Marcel van Lohuizen(马塞尔·范·罗威岑)
+* CUE作者 - Marcel van Lohuizen(马塞尔·范·罗威岑)
 
 - **Gopher China 2018 讲师 - Go2中的错误处理**
 - 在Go语言官方博客有3篇Go语言相关的技术博文
@@ -47,7 +51,7 @@ chai2010
 .image ./images/cue-logo.svg 280 _
 
 
-## 安装CUE语言环境
+* 安装CUE语言环境
 
 .code ./code/install-01/install.txt
 
@@ -55,11 +59,11 @@ chai2010
 
 - VSCode 语法高亮插件
 
-// -----------------------------------------------------------------------------
-## 快速入门
-// -----------------------------------------------------------------------------
+# -----------------------------------------------------------------------------
+* 快速入门
+# -----------------------------------------------------------------------------
 
-## CUE 是 JSON++
+* CUE 是 JSON++
 
 新建 hello.json 文件:
 
@@ -69,38 +73,38 @@ chai2010
 
 .code ./code/json-01/hello.cue
 
-<hr>
+
 
 - 类似 C++和C语言的关系, CUE 也是 JSON 的超集
 - 因此可以先把CUE当作JSON使用, 快速上手
 
 
-## CUE 增强了那些JSON特性
+* CUE 增强了那些JSON特性
 
 .code ./code/json-02/hello.cue
 
 .code ./code/json-02/cmd.txt
 
-<hr>
+
 
 - 对象的键名可以是标识符, 不用加引号
 - 对象和数组可以以一个逗号结尾
 - 增加了多行字符串支持
 - 增加了注释支持
 
-## 先做加法到 JSON++, 再做减法到一个新语言
+* 先做加法到 JSON++, 再做减法到一个新语言
 
 .code ./code/json-03/hello1.cue
 
 .code ./code/json-03/hello2.cue
 
-<hr>
+
 
 - 省略JSON最外层花括弧, 省略末尾的逗号
 - 量变到质变, CUE 现在是一个新语言了
 - 不支持多行注释
 
-## JSON的非侵入验证
+* JSON的非侵入验证
 
 hello.json
 
@@ -110,160 +114,160 @@ hello.check.cue
 
 .code ./code/json-04/hello.check.cue
 
-<hr>
+
 
 - `cue vet hello.json hello.check.cue`
 - 验证 name 是字符串类型
 - 验证 age 类型和值范围
 
-// -----------------------------------------------------------------------------
-## CUE新手上路
-// -----------------------------------------------------------------------------
+# -----------------------------------------------------------------------------
+* CUE新手上路
+# -----------------------------------------------------------------------------
 
-## 嵌套路径简化
+* 嵌套路径简化
 
 .code ./code/var-00/hello.cue
 
 .code ./code/var-00/cmd.txt
 
-<hr>
+
 
 - `a:b:c` 定义c成员
 - `a.b.c` 访问c成员
 
-## 常量和表达式
+* 常量和表达式
 
 .code ./code/var-01/hello.cue
 
-<hr>
+
 
 - `let`可以定义临时常量
 - `_xxx`字段不能修改, 也不会输出, 类似 `let` 效果
 - `_xxx`作为字段可以添加集合约束, 比如加类型
 
-## 引用上下文其他字段
+* 引用上下文其他字段
 
 .code ./code/var-02/hello.cue
 .code ./code/var-02/cmd.txt
 
-<hr>
+
 
 - arg3 是一种集合交集的关系
 
-## for和if
+* for和if
 
 .code ./code/var-03/hello.cue
 .code ./code/var-03/cmd.txt
 
-<hr>
+
 
 - for和if可以生成多个常量值, **但是故意设计得极其难用**
 - 但是因为没有变量, 使得for的使用受到严格限制
 - if目前还没有else
 
-## for配合数组
+* for配合数组
 
 .code ./code/var-04/hello.cue
 .code ./code/var-04/cmd.txt
 
-<hr>
+
 
 - `3*[0]` 生成一个指定长度的数组
 - 可否生成一个素数表/阶乘表?
 
-## 模板变量
+* 模板变量
 
 
 .code ./code/tmpl-01/hello.cue
 .code ./code/tmpl-01/cmd.txt
 
-<hr>
+
 
 - `[_x=_]` 定义一个模板变量(要避免和成员变量冲突)(`_`是什么含义?)
 
-## 模板变量的类型
+* 模板变量的类型
 
 .code ./code/tmpl-02/hello.cue
 .code ./code/tmpl-02/cmd.txt
 
-<hr>
+
 
 - `a: b: c:` 冒号是定义新的字段, 因此不是变量, 而是字符串类型常量
 - 字段路径中可以有多个参数
 
-## 模板和for
+* 模板和for
 
 .code ./code/tmpl-03/hello.cue
 
-<hr>
+
 
 - 模板和for工作在2个纬度: 模板参数类似目录路径, for则是目录下的文件名列表
 
-## Builtin 函数
+* Builtin 函数
 
 .code ./code/builtin-01/hello.cue
 
-<hr>
+
 
 - `and([])` 和 `or([])` 的结果有什么区别, 如何参与运算?
 
 
-// -----------------------------------------------------------------------------
-## 脚本命令
-// -----------------------------------------------------------------------------
+# -----------------------------------------------------------------------------
+* 脚本命令
+# -----------------------------------------------------------------------------
 
-## 脚本命令 - 打印字符串
+* 脚本命令 - 打印字符串
 
 hello_tool.cue:
 
 .code ./code/cmd-00/hello_tool.cue
 
-<hr>
+
 
 - `hello_tool.cue` 中的 `hello` 表示命令
 - `command: hello:` 中的 `hello` 表示命令, 和文件名保持一致
 - `cli.Print` 打印的参数是 `text` 内容
 - `cue cmd hello`
 
-## 脚本命令 - 执行Shell命令
+* 脚本命令 - 执行Shell命令
 
 .code ./code/cmd-01/hello_tool.cue
 
-<hr>
+
 
 - `tool/exec.Run` 可以执行Shell命令
 - `@tag(who,type=string)`可以通过命令行传人参数
 - `cue cmd --inject who=cuelang hello`
 
-## 脚本命令 - 顺序执行多个命令
+* 脚本命令 - 顺序执行多个命令
 
 .code ./code/cmd-02/hello_tool.cue /^command/,
 
-<hr>
+
 
 - 定义多个子命令, 串联执行
 
-## 脚本命令 - 补充说明
+* 脚本命令 - 补充说明
 
 .code ./code/cmd-03/hello_tool.cue /^command/,
 
-<hr>
+
 
 - 可以通过 `$after` 定义依赖顺序
 - 通过命令的输出依赖关系解析执行的顺序, 而不是定义的先后顺序
 - 比 Makefile 之类工具的优势, 将命令的结果结合 encoding 双向转化和赋值
 
-// -----------------------------------------------------------------------------
-## 参考资料
-// -----------------------------------------------------------------------------
+# -----------------------------------------------------------------------------
+* 参考资料
+# -----------------------------------------------------------------------------
 
-## 参考资料
+* 参考资料
 
-- 官网: [https://cuelang.org](https://cuelang.org)
-- 最新: [https://tip.cuelang.org](https://tip.cuelang.org)
-- 代码: [https://github.com/cuelang/cue](https://github.com/cuelang/cue)
+- 官网: [[https://cuelang.org][https://cuelang.org]]
+- 最新: [[https://tip.cuelang.org][https://tip.cuelang.org]]
+- 代码: [[https://github.com/cuelang/cue][https://github.com/cuelang/cue]]
 
-// -----------------------------------------------------------------------------
-// END
-// -----------------------------------------------------------------------------
+# -----------------------------------------------------------------------------
+# END
+# -----------------------------------------------------------------------------
 
