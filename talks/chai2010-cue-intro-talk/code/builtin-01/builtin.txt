@@ -1,0 +1,15 @@
+len("abc")           3
+len("中文")           6
+
+len([1, 2, 3])       3
+len([1, 2, ...])     >=2
+
+and([a, b])          a & b
+and([a])             a
+and([])              _
+
+or([a, b])           a | b
+or([a])              a
+or([])               _|_
+
+close                // 闭合类型

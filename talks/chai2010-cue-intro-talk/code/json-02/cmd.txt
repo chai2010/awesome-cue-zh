@@ -1,0 +1,5 @@
+$ cue export hello.cue
+{
+    "name": "CUE",
+    "desc": "Configure Unify Execute\nhttps://cuelang.org"
+}

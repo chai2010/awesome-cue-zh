@@ -1,0 +1,9 @@
+$ cue eval hello.cue
+a: {
+    xx0: {
+        yy0: {
+            name: "cue:xx0:yy0"
+            age:  111
+        }
+    }
+}

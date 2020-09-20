@@ -1,0 +1,9 @@
+$ cue export hello.cue
+cue export hello.cue
+{
+    "a": {
+        "b": {
+            "c": "foo"
+        }
+    }
+}

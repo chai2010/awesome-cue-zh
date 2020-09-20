@@ -1,0 +1,18 @@
+$ cue
+cue evaluates CUE files, an extension of JSON, and sends them
+to user-defined commands for processing.
+
+Usage:
+  cue [command]
+
+Available Commands:
+  cmd         run a user-defined shell command
+  completion  Generate completion script
+  def         print consolidated definitions
+  eval        evaluate and print a configuration
+  ...
+
+Use "cue [command] --help" for more information about a command.
+$ cue version
+cue version (devel) darwin/amd64
+$
