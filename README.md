@@ -44,6 +44,9 @@ TODO
 ### 英文
 
 - [Configuring Kubernetes with CUE](https://garethr.dev/2019/04/configuring-kubernetes-with-cue/)
+- [Automating the CUE workflow with Tilt](https://garethr.dev/2019/04/automating-the-cue-workflow-with-tilt/)
+- [Testing Cue Configuration with Open Policy Agent](https://garethr.dev/2019/04/testing-cue-configuration-with-open-policy-agent/)
+- [Validating Cue Kubernetes Configuration with Kubeval](https://garethr.dev/2019/04/validating-cue-kubernetes-configuration-with-kubeval/)
 - [The Configuration Complexity Curse](https://blog.cedriccharly.com/post/20191109-the-configuration-complexity-curse/)
 - [Templating YAML in Kubernetes with real code](https://learnk8s.io/templating-yaml-with-code)
 
