@@ -23,6 +23,8 @@ CUE是一种开源数据约束语言，它是JSON的超集，是一种功能强�
 
 相关项目:
 
+- https://github.com/tnarg/rules_cue
+- https://github.com/tnarg/cue_terraform
 - https://github.com/hofstadter-io/hof
 
 ## 幻灯片
