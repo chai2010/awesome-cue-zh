@@ -1,7 +1,3 @@
-
-- *[蚂蚁金服招聘云原生方向和编程语言方向岗位(杭州/P7)](https://github.com/chai2010/awesome-cue-zh/issues/1)*
-
-----
 # CUE资源精选 - 中文版
 
 ![](talks/chai2010-cue-intro-talk/images/cue-logo.svg)
